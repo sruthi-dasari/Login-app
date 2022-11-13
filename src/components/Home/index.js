@@ -1,7 +1,6 @@
 import {Component} from 'react'
 import Login from '../Login'
 import Logout from '../Logout'
-import Message from '../Message'
 import './index.css'
 
 class Home extends Component {
@@ -11,29 +10,18 @@ class Home extends Component {
     const {isLoggedIn} = this.state
 
     if (isLoggedIn === true) {
-      return <Logout/>
+      return <Logout buttonContent="Logout" />
     }
-    return <Login/>
+    return <Login buttonContent="Login" />
   }
 
   render() {
-
     return (
       <div className="bg-container">
         <div className="main-card">{this.renderAuthButton()}</div>
       </div>
     )
+  }
 }
-
-// const Home = () => {
-//   return (
-//     <div className="bg-container">
-//       <div className="main-card">
-//         <Message />
-//         <Login />
-//       </div>
-//     </div>
-//   )
-// }
 
 export default Home
