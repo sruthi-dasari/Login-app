@@ -1,9 +1,12 @@
+import {Component} from 'react'
 import './index.css'
 
-const Message = props => {
-  const {msg} = props
+class Message extends Component {
+  render() {
+    const {msg} = this.props
 
-  return <h1 className="message">{msg}</h1>
+    return <h1 className="message">{msg}</h1>
+  }
 }
 
 export default Message
