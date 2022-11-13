@@ -1,19 +1,22 @@
+import {Component} from 'react'
 import './index.css'
-import Message from './components/Message'
+import Message from '../Message'
+import Logout from '../Logout'
 
-const Login = () => {
-  onLogin(){
-    <Logout />
+class Login extends Component {
+  onLogin = () => <Logout buttonContent="Logout" />
+
+  render() {
+    const {buttonContent} = this.props
+    return (
+      <>
+        <Message msg="Please Login" />
+        <button className="button" onClick={this.onLogin}>
+          {buttonContent}
+        </button>
+      </>
+    )
   }
-
-  return (
-    <>
-      <Message msg="Please Login" />
-      <button className="button" onClick={onLogin}>
-        Login
-      </button>
-    </>
-  )
 }
 
 export default Login
